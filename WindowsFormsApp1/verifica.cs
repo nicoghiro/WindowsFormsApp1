@@ -11,42 +11,40 @@ using System.IO;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form1 : Form
+    public partial class verifica : Form
     {
-        public Form1()
+        public verifica()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            verifica("hashsa");
-        }
-        public void verifica(string filename)
-        {
+            Form1 verifica = new Form1();
+            verifica.ShowDialog();
+            this.Hide();
+            this.Close();
             StreamReader sr = new StreamReader(@"./dati.csv");
             string line;
-            line = sr.ReadLine();
-            char[] recordo = line.ToCharArray();
+            line= sr.ReadLine();
+            char[] recordo = line.ToCharArray();   
             int cont = recordo.Length;
             while (!sr.EndOfStream)
             {
                 line = sr.ReadLine();
                 recordo = line.ToCharArray();
-                if (cont == recordo.Length)
+                if(cont == recordo.Length)
                 {
                     MessageBox.Show("tutti i record sono di lunghezza uguale");
-                    return;
                 }
+                else
+                {
+                    MessageBox.Show("i record sono di lunghezza diversa");
+                }
+             
                 
             }
-            MessageBox.Show("i record sono di lunghezza diversa");
-            return;
+            
         }
     }
 }
