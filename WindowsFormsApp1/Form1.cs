@@ -23,7 +23,7 @@ namespace WindowsFormsApp1
 
         }
 
-        private void verifica()
+        private int verifica(int modo)
         {
             string line;
             var f = new FileStream(@"./dati.csv", FileMode.Open, FileAccess.ReadWrite);
@@ -36,8 +36,12 @@ namespace WindowsFormsApp1
             {
                 br = reader.ReadBytes(1);
                 line = Encoding.ASCII.GetString(br, 0, 1);
+                if (line == "#" && modo == 1)
+                {
+                    return recordlenght;
+                }
 
-                if (line == "#")
+                if (line == "#" && modo==0)
                 {
                     MessageBox.Show(line);
                     string popi = Convert.ToString(recordlenght);
@@ -56,7 +60,7 @@ namespace WindowsFormsApp1
                         {
                             MessageBox.Show("i record sono di lunghezza diversa");
                             f.Close();
-                            return;
+                            return recordlenght;
                         }
                         
                         
@@ -77,19 +81,26 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("i record sono lunghi uguali");
                 f.Close();
-                return;
+                return recordlenght;
             }
             else
             {
                 MessageBox.Show("i record sono lunghezza diversa");
                 f.Close();
-                return;
+                return recordlenght;
             }
                         
         }
         public void button2_Click(object sender, EventArgs e)
         {
-            verifica();
+            verifica(0);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+           int lunghezza= verifica(1);
+            string lung = Convert.ToString(lunghezza);
+            MessageBox.Show(lung);
         }
     }
 }
