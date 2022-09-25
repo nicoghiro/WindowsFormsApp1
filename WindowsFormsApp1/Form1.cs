@@ -23,30 +23,73 @@ namespace WindowsFormsApp1
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void verifica()
         {
-            verifica("hashsa");
-        }
-        public void verifica(string filename)
-        {
-            StreamReader sr = new StreamReader(@"./dati.csv");
             string line;
-            line = sr.ReadLine();
-            char[] recordo = line.ToCharArray();
-            int cont = recordo.Length;
-            while (!sr.EndOfStream)
+            var f = new FileStream(@"./dati.csv", FileMode.Open, FileAccess.ReadWrite);
+            int ver = 1;
+            byte[] br;
+            int recordlenght=0;
+            f.Seek(0, SeekOrigin.Begin);
+            BinaryReader reader = new BinaryReader(f);
+            while (ver != 1||f.Position<f.Length)
             {
-                line = sr.ReadLine();
-                recordo = line.ToCharArray();
-                if (cont == recordo.Length)
+                br = reader.ReadBytes(1);
+                line = Encoding.ASCII.GetString(br, 0, 1);
+
+                if (line == "#")
                 {
-                    MessageBox.Show("tutti i record sono di lunghezza uguale");
-                    return;
+                    MessageBox.Show(line);
+                    string popi = Convert.ToString(recordlenght);
+                    MessageBox.Show(popi);
+                    ver++;
+                    while(f.Position < f.Length-10) { 
+                    f.Seek(recordlenght, SeekOrigin.Current);
+                        
+                    br = reader.ReadBytes(1);
+                    line = Encoding.ASCII.GetString(br, 0, br.Length);
+                        if (line == "#")
+                        {
+                            MessageBox.Show("2");
+                        }
+                        else
+                        {
+                            MessageBox.Show("i record sono di lunghezza diversa");
+                            f.Close();
+                            return;
+                        }
+                        
+                        
+                        
+
+                        
+                                
+                    }
+                   
                 }
-                
+                else
+                {
+                    
+                    recordlenght++;
+                }
             }
-            MessageBox.Show("i record sono di lunghezza diversa");
-            return;
+            if (ver == 1)
+            {
+                MessageBox.Show("i record sono lunghi uguali");
+                f.Close();
+                return;
+            }
+            else
+            {
+                MessageBox.Show("i record sono lunghezza diversa");
+                f.Close();
+                return;
+            }
+                        
+        }
+        public void button2_Click(object sender, EventArgs e)
+        {
+            verifica();
         }
     }
 }

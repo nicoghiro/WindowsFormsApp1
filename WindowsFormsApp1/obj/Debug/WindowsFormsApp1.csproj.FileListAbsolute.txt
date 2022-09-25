@@ -10,3 +10,14 @@ C:\Users\Ghirardi.19370\source\repos\nicoghiro\WindowsFormsApp1\WindowsFormsApp1
 C:\Users\Ghirardi.19370\source\repos\nicoghiro\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\Ghirardi.19370\source\repos\nicoghiro\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 C:\Users\Ghirardi.19370\source\repos\nicoghiro\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.verifica.resources
+C:\Users\nicolas\Source\Repos\nicoghiro\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\nicolas\Source\Repos\nicoghiro\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\nicolas\Source\Repos\nicoghiro\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\nicolas\Source\Repos\nicoghiro\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+C:\Users\nicolas\Source\Repos\nicoghiro\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\nicolas\Source\Repos\nicoghiro\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\nicolas\Source\Repos\nicoghiro\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.verifica.resources
+C:\Users\nicolas\Source\Repos\nicoghiro\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\nicolas\Source\Repos\nicoghiro\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\nicolas\Source\Repos\nicoghiro\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\nicolas\Source\Repos\nicoghiro\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
