@@ -38,6 +38,7 @@ namespace WindowsFormsApp1
                 line = Encoding.ASCII.GetString(br, 0, 1);
                 if (line == "#" && modo == 1)
                 {
+                    f.Close();
                     return recordlenght;
                 }
 
