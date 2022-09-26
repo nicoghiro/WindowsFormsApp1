@@ -32,7 +32,7 @@ namespace WindowsFormsApp1
             int recordlenght=0;
             f.Seek(0, SeekOrigin.Begin);
             BinaryReader reader = new BinaryReader(f);
-            while (ver != 1||f.Position<f.Length)
+            while (ver != 1&&f.Position<f.Length)
             {
                 br = reader.ReadBytes(1);
                 line = Encoding.ASCII.GetString(br, 0, 1);
@@ -48,18 +48,21 @@ namespace WindowsFormsApp1
                     string popi = Convert.ToString(recordlenght);
                     MessageBox.Show(popi);
                     ver++;
-                    while(f.Position < f.Length-10) { 
-                    f.Seek(recordlenght+2, SeekOrigin.Current);
+                    while(f.Position < f.Length) { 
+                    f.Seek(recordlenght, SeekOrigin.Current);
                         
                     br = reader.ReadBytes(1);
                     line = Encoding.ASCII.GetString(br, 0, br.Length);
                         if (line == "#")
                         {
-                            MessageBox.Show("2");
+                            string lungh=Convert.ToString(f.Position);
+                            MessageBox.Show(lungh);
+                            
                         }
                         else
                         {
                             MessageBox.Show("i record sono di lunghezza diversa");
+                            
                             f.Close();
                             return recordlenght;
                         }
