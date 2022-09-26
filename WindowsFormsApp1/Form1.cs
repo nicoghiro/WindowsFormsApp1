@@ -48,7 +48,7 @@ namespace WindowsFormsApp1
                     MessageBox.Show(popi);
                     ver++;
                     while(f.Position < f.Length-10) { 
-                    f.Seek(recordlenght, SeekOrigin.Current);
+                    f.Seek(recordlenght+2, SeekOrigin.Current);
                         
                     br = reader.ReadBytes(1);
                     line = Encoding.ASCII.GetString(br, 0, br.Length);
